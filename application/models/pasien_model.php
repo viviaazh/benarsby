@@ -53,6 +53,11 @@ class pasien_model extends CI_Model {
     }
 
     public function cariDataPasien(){
+        // $this->db->select('*');
+		// $this->db->from('pasien');
+		// $this->db->like('nama',$keyword);
+		// $this->db->or_like('pekerjaan',$keyword);
+		// return $this->db->get()->result();
         $keyword=$this->input->post('keyword');
         $this->db->like('nama',$keyword);
         $this->db->or_like('pekerjaan', $keyword);

@@ -12,16 +12,16 @@ class user extends CI_Controller {
         $this->load->model('pasien_model');
 
         // validasi level
-        if($this->session->userdata('level')!="user"){
-            redirect('login','refresh');
-        }
+        // if($this->session->userdata('level')!="admin"){
+        //     redirect('login','refresh');
+        // }
         
     }
     public function index()
     {
         $data=array(
-            'title'=>'mahasiswa',
-            'mahasiswa'=>$this->mahasiswa_model->datatables()
+            'title'=>'pasien',
+            'pasien'=>$this->pasien_model->datatables()
         );
         $this->load->view('template/header_datatabels_user',$data);
         $this->load->view('pasien/user',$data);

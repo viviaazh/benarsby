@@ -19,7 +19,7 @@ class pasien extends CI_Controller
     {
         $this->load->model('pasien_model');
         // $this->load->database();
-        $data['title'] = 'List Pasien';
+        // $data['title'] = 'List Mahasiswa';
         $data['ps'] = $this->pasien_model->getAllPasien();
         if($this->input->post('keyword')){
             $data['ps']=$this->pasien_model->cariDataPasien();

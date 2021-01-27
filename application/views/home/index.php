@@ -19,10 +19,11 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-                        <a class="dropdown-item" href="login.php">Login</a>
-                        <a class="dropdown-item" href="#">Activity Log</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="login.html">Logout</a>
+                        <!-- <a class="dropdown-item" href="login.php">Login</a> -->
+                        <!-- <a class="dropdown-item" href="#">Activity Log</a> -->
+                        <!-- <div class="dropdown-divider"></div> -->
+                        <!-- <a class="dropdown-item" href="login.html">Logout</a> -->
+                        <a class="dropdown-item" href="<?= base_url(); ?>login/logout">Logout</a>
                     </div>
                 </li>
             </ul>
@@ -58,7 +59,7 @@
                 <main>
                     <div class="container-fluid">
                         <h1 class="mt-4">Hello, <?= $this->session->userdata('level'); ?>!</h1>
-                        <ol class="breadcrumb mb-4">
+                        <!-- <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item active">Dashboard</li>
                         </ol>
                         <div class="row">
@@ -98,7 +99,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </main>
                 

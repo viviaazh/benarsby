@@ -23,10 +23,11 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-                        <a class="dropdown-item" href="login.php">Login</a>
+                        <!-- <a class="dropdown-item" href="login.php">Login</a>
                         <a class="dropdown-item" href="#">Activity Log</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="login.html">Logout</a>
+                        <div class="dropdown-divider"></div> -->
+                        <a class="dropdown-item" href="<?= base_url(); ?>login/logout">Logout</a>
+                        <!-- <a class="dropdown-item" href="login.html">Logout</a> -->
                     </div>
                 </li>
             </ul>
@@ -62,28 +63,31 @@
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid">
-                        <h1 class="mt-4">Data Pasien</h1>
+                        <!-- <h1 class="mt-4">Data Pasien</h1> -->
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item"><a href="">Dashboard</a></li>
                             <li class="breadcrumb-item active">Data Pasien</li>
                         </ol>
-                        <div class="card mb-4">
-                            <div class="col-md-6">
+                        <!-- <div class="card mb-2"> -->
+                        <div class="col-md-6">
                                 <a href="<?= base_url(); ?>pasien/tambah" class="btn btn-primary"> Tambah Data</a>
-                            </div>
+                            <!-- </div> -->
                         </div>
-                        <div class="card mb-4">
-                            <div class="col-md-6">
+                        <!-- <button type="Submit" name="edit" class="btn btn-primary float-right"> Edit </button> -->
+                    
+                        <div class="col-md-6">
                                 <form action="" method="post">
                                 <div class="input-group">
                                     <input type="text" class="form-control" placeholder="Cari Data Pasien" name="keyword">
                                     <div class="input-group-append">
                                         <button class="btn btn-primary" type="submit">Cari</button>
+                                        
                                     </div>
+                                    <a href="<?=base_url();?>pasien" class="btn btn-primary">All</a>
                                 </div>
+                                
                                 </form>
                             </div>
-                        </div>
                         <div class="card mb-4">
                             <!-- <div class="card-header">
                                 <i class="fas fa-table mr-1"></i>
@@ -92,7 +96,7 @@
                             <div class="card-body">
                             
                                 <div class="table-responsive">
-                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <table class="table is-narrow" id="tableuser" width="100%" cellspacing="0">
                                         <thead>
                                             <tr>
                                                 <th>Nama</th>
@@ -142,5 +146,6 @@
                                  
                             </div>
                         </div>
+                        
                     </div>
                 </main>

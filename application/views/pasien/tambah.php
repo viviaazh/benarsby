@@ -24,10 +24,6 @@
                         <input type="text" class="form-control" id="jk" name="jk">
                     </div>
                     <div class="form-group">
-                        <label for="nohp">NO HP</label>
-                        <input type="text" class="form-control" id="nohp" name="nohp">
-                    </div>
-                    <div class="form-group">
                         <table for="pekerjaan">Pekerjaan</table>
                         <select class="form-control" id="pekerjaan" name="pekerjaan">
                             <?php foreach($pekerjaan as $key): ?>
@@ -37,6 +33,10 @@
                                 </option>
                             <?php endforeach; ?>
                         </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="nohp">Jabatan</label>
+                        <input type="text" class="form-control" id="jabatan" name="jabatan">
                     </div>
                     <div class="form-group">
                         <label for="alamat">Alamat</label>

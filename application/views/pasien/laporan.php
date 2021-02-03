@@ -43,6 +43,7 @@ tbody tr:hover{
     <tr>
         <!-- <th class="short">#</th> -->
         <th class="normal">Nama</th>
+        <th class="normal">Jenis Kelamin</th>
         <th class="normal">TTL</th>
         <th class="normal">Alamat</th>
     </tr>
@@ -52,6 +53,7 @@ tbody tr:hover{
         <?php foreach ($pasien as $user):?>
         <tr>
             <td><?php echo $user->nama; ?></td>
+            <td><?php echo $user->jk; ?></td>
             <td><?php echo $user->ttl; ?></td>
             <td><?php echo $user->alamat; ?></td>
         </tr>

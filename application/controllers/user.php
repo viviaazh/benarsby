@@ -35,8 +35,8 @@ class user extends CI_Controller {
         $this->load->library('pdf');
 
         $this->pdf->setPaper('A4', 'potrait');
-        $this->pdf->filename = "laporan-petanikode.pdf";
-        $this->pdf->load_view('mahasiswa/laporan', $data);
+        $this->pdf->filename = "skhbn.pdf";
+        $this->pdf->load_view('pasien/laporan', $data);
     }
 
 }

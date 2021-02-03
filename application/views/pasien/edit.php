@@ -38,14 +38,6 @@
                     value="<?= $pasien['jk'];?>">
                 </div>
                 <div class="form-group">
-                    <label form="nohp">NO HP</label>
-                    <input type="text" 
-                    class="form-control" 
-                    id="nohp" 
-                    name="nohp"
-                    value="<?= $pasien['nohp'];?>">
-                </div>
-                <div class="form-group">
                     <label for="pekerjaan">Pekerjaan</label>
                     <select class="form-control" id="pekerjaan" name="pekerjaan">
                         <?php foreach($pekerjaan as $key): ?>
@@ -56,6 +48,14 @@
                         <?php endif; ?>
 `                     <?php endforeach; ?>  
                     </select>
+                </div>
+                <div class="form-group">
+                    <label form="jabatan">Jabatan</label>
+                    <input type="text" 
+                    class="form-control" 
+                    id="jabatan" 
+                    name="jabatan"
+                    value="<?= $pasien['jabatan'];?>">
                 </div>
                 <div class="form-group">
                     <label form="alamat">Alamat</label>

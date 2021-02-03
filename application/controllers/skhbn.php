@@ -28,6 +28,15 @@ class skhbn extends CI_Controller
         $this->load->view('template/header', $data);
         $this->load->view('skhbn/index', $data);
         $this->load->view('template/footer');
+
+        
+    }
+    public function edit($id){
+        $data['title']='Form Edit Data Pasien';
+        $data['skhbn']=$this->skhbn_model->getskhbnByID($id);
+        $this->load->view('template/header', $data);
+        $this->load->view('skhbn/edit', $data);
+        $this->load->view('template/footer');
     }
 }
 

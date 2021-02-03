@@ -24,7 +24,7 @@ class pasien_model extends CI_Model {
             "jam"=>$this->input->post('jam',true)
         ];
         $this->db->insert('pasien', $data);
-        
+        $this->db->insert('skhbn', $data);
     }
 
     public function hapusdataps($id){
@@ -41,8 +41,8 @@ class pasien_model extends CI_Model {
             "nama"=>$this->input->post('nama',true),
             "ttl"=>$this->input->post('ttl',true),
             "jk"=>$this->input->post('jk',true),
-            "nohp"=>$this->input->post('nohp',true),
             "pekerjaan"=>$this->input->post('pekerjaan',true),
+            "jabatan"=>$this->input->post('jabatan',true),
             "alamat"=>$this->input->post('alamat',true),
             "keperluan"=>$this->input->post('keperluan',true),
             "tanggal"=>$this->input->post('tanggal',true),

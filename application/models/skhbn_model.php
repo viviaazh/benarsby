@@ -8,22 +8,25 @@ class skhbn_model extends CI_Model {
     public function getAllSkhbn()
     {
        
-        return $this->db->get('pasien')->result_array();
+        return $this->db->get('skhbn')->result_array();
     }
 
     public function getskhbnByID($id){
-        return $this->db->get_where('pasien', ['id'=>$id])->row_array();
+        return $this->db->get_where('skhbn', ['id'=>$id])->row_array();
     }
+
+   
+
 
     public function cariDataSkhbn(){
         $keyword=$this->input->post('keyword');
         $this->db->like('nama',$keyword);
         $this->db->or_like('pekerjaan', $keyword);
-        return $this->db->get('pasien')->result_array();
+        return $this->db->get('skhbn')->result_array();
     }
 
     public function datatables(){
-        $query=($this->db->order_by('id','DESC')->get('pasien'));
+        $query=($this->db->order_by('id','DESC')->get('skhbn'));
         return $query->result();
     }
 }

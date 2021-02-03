@@ -102,8 +102,8 @@
                                                 <th>Nama</th>
                                                 <th>TTL</th>
                                                 <th>Jenis Kelamin</th>
-                                                <th>No HP</th>
                                                 <th>Pekerjaan</th>
+                                                <th>Jabatan</th>
                                                 <th>Alamat</th>
                                                 <th>Keperluan</th>
                                                 <th>Tanggal</th>
@@ -117,8 +117,8 @@
                                                 <th><?= $pasien['nama'] ;?></th>
                                                 <td><?= $pasien['ttl'] ;?></td>
                                                 <td><?= $pasien['jk'] ;?></td>
-                                                <td><?= $pasien['nohp'] ;?></td>
                                                 <td><?= $pasien['pekerjaan'] ;?></td>
+                                                <td><?= $pasien['jabatan'] ;?></td>
                                                 <td><?= $pasien['alamat'] ;?></td>
                                                 <td><?= $pasien['keperluan'] ;?></td>
                                                 <td><?= $pasien['tanggal'] ;?></td>

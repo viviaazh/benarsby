@@ -79,7 +79,7 @@ class pasien extends CI_Controller
         $this->form_validation->set_rules('nama', 'nama', 'required');
         $this->form_validation->set_rules('ttl', 'ttl', 'required');
         $this->form_validation->set_rules('jk', 'jk', 'required');
-        $this->form_validation->set_rules('nohp', 'nohp', 'required|numeric');
+        $this->form_validation->set_rules('jabatan', 'jabatan', 'required');
         $this->form_validation->set_rules('alamat', 'alamat', 'required');
         $this->form_validation->set_rules('keperluan', 'keperluan', 'required');
         $this->form_validation->set_rules('tanggal', 'tanggal', 'required');

@@ -90,7 +90,7 @@
                             <div class="card-body">
                             
                                 <div class="table-responsive">
-                                    <table class="table table-bordered" id="tableuser" width="100%" cellspacing="0">
+                                    <table class="table table-bordered" id="tableuser" width="100%" cellspacing="0" >
                                         <thead>
                                             <tr>
                                                 <th>Nama</th>
@@ -103,17 +103,18 @@
                                                 <th></th>
                                             </tr>
                                         </thead>
-                                        <?php foreach ($sk as $pasien) { ?>
+                                        <?php foreach ($sk as $skhbn) { ?>
                                         <tbody>
                                             <tr>
-                                                <th><?= $pasien['nama'] ;?></th>
-                                                <td><?= $pasien['jk'] ;?></td>
-                                                <td><?= $pasien['ttl'] ;?></td>
-                                                <td><?= $pasien['alamat'] ;?></td>
-                                                <td><?= $pasien['keperluan'] ;?></td>
-                                                <td><?= $pasien['tanggal'] ;?></td>
-                                                <td><?= $pasien['jam'] ;?></td>
-                                                <td><a href="<?=base_url();?>pasien/detail/<?= $pasien['id'];?>"
+                                                <th><?= $skhbn['nama'] ;?></th>
+                                                <td><?= $skhbn['jk'] ;?></td>
+                                                <td><?= $skhbn['ttl'] ;?></td>
+                                                <td><?= $skhbn['alamat'] ;?></td>
+                                                <td><?= $skhbn['keperluan'] ;?></td>
+                                                <td><?= $skhbn['tanggal'] ;?></td>
+                                                <td><?= $skhbn['jam'] ;?></td>
+                                                
+                                                <td><a href="<?=base_url();?>skhbn/edit/<?= $skhbn['id'];?>"
                                                         class="badge badge-primary float-right">Cetak</a></td>
                                             </tr>
                                             

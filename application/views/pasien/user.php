@@ -9,8 +9,8 @@
                 <th>Nama</th>
                 <th>TTL</th>
                 <th>Jenis Kelamin</th>
-                <th>NO HP</th>
                 <th>Pekerjaan</th>
+                <th>Jabatan</th>
                 <th>Alamat</th>
                 <th>Keperluan</th>
                 <th>Tanggal</th>
@@ -26,8 +26,8 @@
                     <td><?= $ps->nama; ?></td>
                     <td><?= $ps->ttl; ?></td>
                     <td><?= $ps->jk; ?></td>
-                    <td><?= $ps->nohp; ?></td>
                     <td><?= $ps->pekerjaan; ?></td>
+                    <td><?= $ps->jabatan; ?></td>
                     <td><?= $ps->alamat; ?></td>
                     <td><?= $ps->keperluan; ?></td>
                     <td><?= $ps->tanggal; ?></td>

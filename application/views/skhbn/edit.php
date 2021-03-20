@@ -24,12 +24,15 @@
                 <label for=""><b> Keperluan:</b></label>
             <?= $skhbn['keperluan'];?></p>
             <p class="card-text">
+                <label for=""><b> Hari:</b></label>
+                <?php echo $row['hari']; ?></p>
+            <p class="card-text">
                 <label for=""><b> Tanggal:</b></label>
             <?= $skhbn['tanggal'];?></p>
             <p class="card-text">
                 <label for=""><b> Jam:</b></label>
             <?= $skhbn['jam'];?></p>
-            <td colspan=3><input type="submit" value="Print"/></td>
+            <td colspan=3><input type="submit" name="btnPrint" value="Print"/></td>
             </form>
         </div>
         </div>

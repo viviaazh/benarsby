@@ -4,12 +4,15 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class skhbn extends CI_Controller
 {
-    public function __construct()
+    public function __construct($orientation = 'P', $unit = 'pt', $format = 'A4', $margin = 10)
     {
-        parent::__construct();
+        parent::__construct($orientation, $unit, $format, $margin);
         $this->load->model('skhbn_model');
         $this->load->library('form_validation');
-
+    //     $this->SetMargin($margin);
+    // // $this->SetLeftMargin($margin);
+    // // $this->SetRightMargin($margin);
+    // // $this->SetAutoPageBreak(true, $margin);
         if($this->session->userdata('level')!="admin"){
             redirect('login','refresh');
         }
@@ -31,13 +34,15 @@ class skhbn extends CI_Controller
 
         
     }
-    public function edit($id){
-        $data['title']='Form Edit Data Pasien';
-        $data['skhbn']=$this->skhbn_model->getskhbnByID($id);
+    public function detail($id_pasien){
+        // $data['title']='Detail Pasien';
+        $data['pasien']=$this->skhbn_model->getskhbnByID($id_pasien);
         $this->load->view('template/header', $data);
-        $this->load->view('skhbn/edit', $data);
+        $this->load->view('skhbn/detail', $data);
         $this->load->view('template/footer');
+
     }
+
 }
 
 /* End of file pasien.php */

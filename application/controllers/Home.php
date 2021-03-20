@@ -12,6 +12,8 @@
             //tambahkan $data pada home/index
             $this->load->view('home/index', $data);
             $this->load->view('template/footer');
+            $data['graph'] = $this->pasien_model->graph();
+		$this->load->view('home/index', $data);
 
             if($this->session->userdata('level')!="admin"){
                 redirect('login','refresh');

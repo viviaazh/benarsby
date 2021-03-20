@@ -1,22 +1,16 @@
 <?php
-// membaca data dari form
-// function acceptData(){
-//     $nama = $this->input->post('nama');
-//     $jk = $this->input->post('jk');
-//     $ttl = $this->input->post('ttl');
-//     $alamat = $this->input->post('alamat');
-//     $jam = $this->input->post('jam');
-//     $tanggal = $this->input->post('tanggal');
+  include "koneksi.php";
 
-// }
-$nama = $_POST['nama'];
-$jk = $_POST['jk'];
-$ttl = $_POST['ttl'];
-$alamat = $_POST['alamat'];
-$jam = $_POST['jam'];
-$tanggal = $_POST['tanggal'];
-// memanggil dan membaca template dokumen yang telah kita buat
-$document = file_get_contents("skbn.rtf");
+  if(isset($_POST["submit"])){
+    $id = $_POST['id'];
+    $nama = $_POST['nama'];
+    $ttl = $_POST['ttl'];
+    $jk = $_POST['jk'];
+    $alamat = $_POST['alamat'];
+    $keperluan = $_POST['keperluan'];
+  }
+
+    $document = file_get_contents("skbn.rtf");
 // isi dokumen dinyatakan dalam bentuk string
 $document = str_replace("#NAMA", $nama, $document);
 $document = str_replace("#JK", $jk, $document);

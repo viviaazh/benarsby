@@ -12,7 +12,7 @@
             </div>
             <?php endif;?>
                 <form action="" method="post">
-                <input type="hidden" name="id" value="<?=$pasien['id'];?>">
+                <input type="hidden" name="id_pasien" value="<?=$pasien['id_pasien'];?>">
                 <div class="form-group">
                     <label form="nama">Nama</label>
                     <input type="text" 
@@ -74,6 +74,14 @@
                     value="<?= $pasien['keperluan'];?>">
                 </div>
                 <div class="form-group">
+                    <label form="hari">Hari</label>
+                    <input type="text" 
+                    class="form-control" 
+                    id="hari" 
+                    name="hari"
+                    value="<?= $pasien['hari'];?>">
+                </div>
+                <div class="form-group">
                     <label form="tanggal">Tanggal</label>
                     <input type="date" 
                     class="form-control" 
@@ -88,6 +96,14 @@
                     id="jam" 
                     name="jam"
                     value="<?= $pasien['jam'];?>">
+                </div>
+                <div class="form-group">
+                    <label form="created_at">Waktu</label>
+                    <input type="date" 
+                    class="form-control" 
+                    id="created_at" 
+                    name="created_at"
+                    value="<?= $pasien['created_at'];?>">
                 </div>
                     <button type="Submit" name="edit" class="btn btn-primary float-right"> Edit </button>
                     <a href="<?=base_url();?>pasien" class="btn btn-primary">Kembali</a>

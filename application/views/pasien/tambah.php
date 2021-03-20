@@ -35,7 +35,7 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="nohp">Jabatan</label>
+                        <label for="jabatan">Jabatan</label>
                         <input type="text" class="form-control" id="jabatan" name="jabatan">
                     </div>
                     <div class="form-group">
@@ -45,6 +45,10 @@
                     <div class="form-group">
                         <label for="keperluan">Keperluan</label>
                         <input type="text" class="form-control" id="keperluan" name="keperluan">
+                    </div>
+                    <div class="form-group">
+                        <label for="hari">Hari</label>
+                        <input type="text" class="form-control" id="hari" name="hari">
                     </div>
                     <div class="form-group">
                         <label for="tanggal">Tanggal</label>

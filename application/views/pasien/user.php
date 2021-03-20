@@ -13,8 +13,10 @@
                 <th>Jabatan</th>
                 <th>Alamat</th>
                 <th>Keperluan</th>
+                <th>Hari</th>
                 <th>Tanggal</th>
                 <th>Jam</th>
+                <th>Waktu</th>
             </tr>
         </thead>
         <tbody>
@@ -30,8 +32,10 @@
                     <td><?= $ps->jabatan; ?></td>
                     <td><?= $ps->alamat; ?></td>
                     <td><?= $ps->keperluan; ?></td>
+                    <td><?= $ps->hari; ?></td>
                     <td><?= $ps->tanggal; ?></td>
                     <td><?= $ps->jam; ?></td>
+                    <td><?= $ps->created_at; ?></td>
                 </tr>
                 <?php } ?>
         </tbody>

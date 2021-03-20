@@ -1,33 +1,7 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-
-use Dompdf\Dompdf;
-class pdf extends Dompdf{
-    /**
-     * PDF filename
-     * @var String
-     */
-    public $filename;
-    
-    public function __construct()
-    {
-        parent::__construct();
-        $this->filename = "laporan.pdf";
-    }
-    /**
-     * get an instance of CodeIgniter
-     * 
-     * @access protected
-     * @return void
-     */
-    protected function ci(){
-        return get_instance();
-    }
-    public function load_view($view, $data = array()){
-        $html = $this->ci()->load->view($view, $data, TRUE);
-        $this->load_html($html);
-        //Render the PDF
-        $this->render();
-        $this->stream($this->filename, array("Attachment" => false));
+class pdf{
+    public function __construct(){
+        include_once APPPATH . '/third_party/fpdf/fpdf.php';
     }
 }
+?>

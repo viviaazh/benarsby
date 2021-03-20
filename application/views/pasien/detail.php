@@ -26,11 +26,18 @@
                 <label for=""><b> Keperluan:</b></label>
             <?= $pasien['keperluan'];?></p>
             <p class="card-text">
+                <label for=""><b> Hari:</b></label>
+            <?= $pasien['hari'];?></p>
+            <p class="card-text">
                 <label for=""><b> Tanggal:</b></label>
-            <?= $pasien['tanggal'];?></p>
+            <?= $pasien['tanggal'];?></p> 
             <p class="card-text">
                 <label for=""><b> Jam:</b></label>
             <?= $pasien['jam'];?></p>
+            <p class="card-text">
+                <label for=""><b> Waktu:</b></label>
+            <?= $pasien['created_at'];?></p>
+            
             <a href="<?=base_url();?>pasien" class="btn btn-primary">Kembali</a>
         </div>
         </div>

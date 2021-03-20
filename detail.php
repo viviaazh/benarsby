@@ -1,50 +1,50 @@
-<?php
-session_start();
-include "kone.php";
-
+<?php 
+  include 'koneksi.php';
 ?>
-<div class="container-fluid">
-                        <h1 class="mt-4">Tabel User</h1>
-                        <div class="card mb-4">
-                            <div class="card-header"><i class="fas fa-table mr-1"></i>Data User RESIK</div>
-                            <div class="card-body">
-                                <div class="table-responsive">
-                                    <?php
-                                        $openDb = mysqli_connect("localhost", "root", "", "benarsby");
-                                        $result = mysqli_query($openDb, "SELECT * FROM skhbn");
-                                    ?>
-                                    <form action="surat.php" method="POST">
-                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                        <thead>
-                                            <tr>
-                                                <th>Nama</th>
-                                                <th>Jenis Kelamin</th>
-                                                <th>TTL</th>
-                                                <th>Alamat</th>
-                                                <th>Keperluan</th>
-                                                <th>Tanggal</th>
-                                                <th>Jam</th>
-                                            </tr>
-                                                <?php $x=1; ?>
-                                                <?php while($row=mysqli_fetch_assoc($result)):?>
-                                            </thead>        
-                                            <tr>
-                                                <td><?php echo $row["nama"]; ?></td>
-                                                <td><?php echo $row["jk"]; ?></td>
-                                                <td><?php echo $row["ttl"]; ?></td>
-                                                <td><?php echo $row["alamat"]; ?></td>
-                                                <td><?php echo $row["keperluan"]; ?></td>
-                                                <td><?php echo $row["tanggal"]; ?></td>
-                                                <td><?php echo $row["jam"]; ?></td>
-                                            </tr>
-                                            </tr>
-   <td colspan=3><input type="submit" value="Print"/></td>
-  </tr>
-                                                <?php $x++ ?>
-                                                <?php endwhile; ?>
-                                    </table>
-                                </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+<div class="container">
+    <div class="row mt-3">
+        <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                Detail Data Pasien
+            </div>
+        
+            <div class="card-body">
+            <form action="<?=base_url();?>surat.php" method="POST">
+                <?php  
+                    if (isset ($_GET['id'])) {
+                            $id = $_GET['id'];
+                            $qOpenSquare = "SELECT * FROM skhbn WHERE id='$id' ";
+                            $openSquare = mysqli_query($openDb, $qOpenSquare);
+                            while ($row= mysqli_fetch_assoc($openSquare) ) {
+                    ?>  
+            <p class="card-text">
+                <label for=""><b> Nama:</b></label>
+                <?php echo $row['nama']; ?></p>
+            <p class="card-text">
+                <label for=""><b> TTL:</b></label>
+                <?php echo $row['ttl']; ?></p>
+            <p class="card-text">
+                <label for=""><b> Jenis Kelamin:</b></label>
+                <?php echo $row['jk']; ?></p>    
+            <p class="card-text">
+                <label for=""><b> Alamat:</b></label>
+                <?php echo $row['alamat']; ?></p>    
+            <p class="card-text">
+                <label for=""><b> Keperluan:</b></label>
+                <?php echo $row['keperluan']; ?></p>
+            <p class="card-text">
+                <label for=""><b> Tanggal:</b></label>
+                <?php echo $row['tanggal']; ?></p>
+            <td colspan=3><input type="submit" name="btnPrint" value="Print"/></td>
+            <a href="<?=base_url();?>pasien" class="btn btn-primary">Kembali</a>
+            </form>
+            <?php
+                           }
+                        }
+                      ?>
+        </div>
+        </div>
+        </div>
+    </div>
+    </div>

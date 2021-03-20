@@ -38,11 +38,12 @@ class pasien extends CI_Controller
         $this->form_validation->set_rules('nama', 'nama', 'required');
         $this->form_validation->set_rules('ttl', 'ttl', 'required');
         $this->form_validation->set_rules('jk', 'jk', 'required');
-        $this->form_validation->set_rules('nohp', 'nohp', 'required|numeric');
         $this->form_validation->set_rules('alamat', 'alamat', 'required');
         $this->form_validation->set_rules('keperluan', 'keperluan', 'required');
+        $this->form_validation->set_rules('hari', 'hari', 'required');
         $this->form_validation->set_rules('tanggal', 'tanggal', 'required');
         $this->form_validation->set_rules('jam', 'jam', 'required');
+        $this->form_validation->set_rules('created_at', 'created_at', 'required');
         // $this->form_validation->set_rules('email', 'email', 'required|valid_email');
 
         if ($this->form_validation->run() == FALSE) {
@@ -53,27 +54,28 @@ class pasien extends CI_Controller
             $this->pasien_model->tambahdataps();
             $this->session->set_flashdata('flash-data','Data Pasien Berhasil Ditambahkan');
             redirect('pasien', 'refresh');
+            // redirect('skhbn','refresh');
         }
     }
 
-    public function hapus($id){
-        $this->pasien_model->hapusdataps($id);
+    public function hapus($id_pasien){
+        $this->pasien_model->hapusdataps($id_pasien);
         $this->load->library('session');
         $this->session->set_flashdata('flash-data','Data Pasien Berhasil Dihapus');
         redirect('pasien','refresh');
     }
 
-    public function detail($id){
+    public function detail($id_pasien){
         $data['title']='Detail Pasien';
-        $data['pasien']=$this->pasien_model->getpasienByID($id);
+        $data['pasien']=$this->pasien_model->getpasienByID($id_pasien);
         $this->load->view('template/header', $data);
         $this->load->view('pasien/detail', $data);
         $this->load->view('template/footer');
     }
 
-    public function edit($id){
+    public function edit($id_pasien){
         $data['title']='Form Edit Data Pasien';
-        $data['pasien']=$this->pasien_model->getpasienByID($id);
+        $data['pasien']=$this->pasien_model->getpasienByID($id_pasien);
         $data['pekerjaan']=['PNS', 'POLRI', 'SWASTA', 'PELAJAR', 'TIDAK BEKERJA'];
 
         $this->form_validation->set_rules('nama', 'nama', 'required');
@@ -82,8 +84,10 @@ class pasien extends CI_Controller
         $this->form_validation->set_rules('jabatan', 'jabatan', 'required');
         $this->form_validation->set_rules('alamat', 'alamat', 'required');
         $this->form_validation->set_rules('keperluan', 'keperluan', 'required');
+        $this->form_validation->set_rules('hari', 'hari', 'required');
         $this->form_validation->set_rules('tanggal', 'tanggal', 'required');
         $this->form_validation->set_rules('jam', 'jam', 'required');
+        $this->form_validation->set_rules('created_at', 'created_at', 'required');
 
         if ($this->form_validation->run() == FALSE){
             $this->load->view('template/header', $data);

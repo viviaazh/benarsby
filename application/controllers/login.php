@@ -27,7 +27,7 @@
             $data['title']='Login';
             $this->load->view('template/header_login',$data);
             $this->load->view('login/index');
-            $this->load->view('template/footer');
+            // $this->load->view('template/footer');
         }
 
 
@@ -39,12 +39,21 @@
             $this->load->model('login_model');
 
             $ceklogin=$this->login_model->login($username,$password);
-
+            $result = $this->login_model->ambillogin($username, $password)->row();
             if ($ceklogin) {
                 foreach($ceklogin as $row);
 
                 $this->session->set_userdata('user',$row->username);
                 $this->session->set_userdata('level',$row->level);
+
+                $session_login = array(
+                    "id_user"	=> $result->id,
+                    "username"	=> $result->username,
+                    "nama"		=> $result->nama,
+                    "ttl"		=> $result->ttl,
+                    "alamat"     => $result->alamat,
+                );
+                $this->session->set_userdata($session_login);
 
                 if ($this->session->userdata('level')=="admin") 
                 {
@@ -52,7 +61,7 @@
                 }
                 elseif($this->session->userdata('level')=="user")
                 {
-                    redirect('user');
+                    redirect('dashboard');
                 }
             }
             else

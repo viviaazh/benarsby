@@ -1,5 +1,5 @@
 <?=
-form_open('login/proses_login');
+    form_open('login/proses_login');
 ?>
 <div class="container py-5">
     <div class="row">
@@ -14,24 +14,25 @@ form_open('login/proses_login');
                         <form class="form" role="form" autocomplate="off" id="formLogin" novalidates="" method="POST">
                             <div class="form-group">
                                 <label for="uname1">Username</label>
-                                <input type="text" class="form-control form-control-lg rounded-0" name="uname1" id="uname1" required="">
+                                <input type="text" class="form-control form-control-lg rounded-0" name="uname1" id="uname1" required="" placeholder="Username">
                                 <div class="invalid-feedback">Oops, you missed this one.</div>
                             </div>
                             <div class="form-group">
                                 <label>Password</label>
-                                <input type="password" class="form-control form-control-lg rounded0" name="pwd1" id="pwd1" required="" autocomplate="new-password">
+                                <input type="password" class="form-control form-control-lg rounded0" name="pwd1" id="pwd1" required="" autocomplate="new-password" placeholder="Password">
                                 <div class="invalid-feedback">Enter your password too!</div>
                             </div>
                             <div class="alert alert-info" role="alert">
-                            <?php
-                                if(isset($pesan)){
+                                <?php
+                                if (isset($pesan)) {
                                     echo $pesan;
-                                }else{
+                                } else {
                                     echo "Masukkan username dan password anda";
                                 }
                                 ?>
                             </div>
                             <button type="submit" class="btn btn-success btn-lg float-right" id="btnLogin">Login</button>
+                            <b>Belum Punya Akun ? Silahkan <a href="<?php echo base_url('daftar') ?>">Daftar</a></b>
                         </form>
                     </div>
                 </div>
@@ -42,5 +43,5 @@ form_open('login/proses_login');
 
 <?=
 
-form_close();
+    form_close();
 ?>
